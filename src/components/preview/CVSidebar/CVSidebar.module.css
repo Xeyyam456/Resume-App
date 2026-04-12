@@ -1,0 +1,200 @@
+.sidebar {
+  width: 33%;
+  flex-shrink: 0;
+  background: linear-gradient(160deg, #0d1b2a 0%, #1a1040 50%, #0d1b2a 100%);
+  color: #e2e8f0;
+  padding: 2.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* decorative blurred orbs */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sidebar::after {
+  content: '';
+  position: absolute;
+  bottom: 80px;
+  left: -80px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ─── Avatar ─── */
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 auto 0.6rem;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+  box-shadow:
+    0 0 0 3px rgba(99,102,241,0.4),
+    0 0 0 6px rgba(99,102,241,0.15),
+    0 8px 24px rgba(99,102,241,0.4);
+}
+
+.avatarRing {
+  width: 96px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #6366f1, #06b6d4, transparent);
+  margin: 0 auto 1.75rem;
+  border-radius: 99px;
+  opacity: 0.6;
+}
+
+/* ─── Section ─── */
+.section {
+  margin-bottom: 1.6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #6366f1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.sectionTitle::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent);
+}
+
+/* ─── Contact ─── */
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 10.5px;
+  color: #94a3b8;
+  word-break: break-all;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.contactItem:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+.contactIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  background: rgba(99,102,241,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  color: #818cf8;
+}
+
+/* ─── Skills ─── */
+.skill {
+  margin-bottom: 0.6rem;
+}
+
+.skillName {
+  font-size: 11px;
+  color: #cbd5e1;
+  margin-bottom: 0.35rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skillLevelText {
+  font-size: 8.5px;
+  color: #475569;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.dotTrack {
+  display: flex;
+  gap: 4px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.dotFilled {
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
+  border-color: transparent;
+  box-shadow: 0 0 6px rgba(99,102,241,0.6);
+}
+
+/* ─── Education ─── */
+.eduItem {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.eduItem:last-child {
+  border-bottom: none;
+}
+
+.eduDegree {
+  font-size: 11px;
+  font-weight: 700;
+  color: #e2e8f0;
+  line-height: 1.35;
+}
+
+.eduSchool {
+  font-size: 10.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.eduDate {
+  font-size: 9.5px;
+  color: #334155;
+  margin-top: 3px;
+}

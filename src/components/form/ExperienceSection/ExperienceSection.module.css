@@ -1,0 +1,52 @@
+.grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.grid2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.entries {
+  margin-bottom: 0.75rem;
+}
+
+/* "Currently working here" checkbox */
+.checkboxField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkboxField input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: #0891b2;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkboxLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #475569;
+  cursor: pointer;
+}
+
+/* "Present" disabled field */
+.inputDisabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border: 1.5px solid #e2e8f0;
+  padding: 0.55rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: inherit;
+}

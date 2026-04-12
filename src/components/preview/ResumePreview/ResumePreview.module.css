@@ -1,0 +1,57 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 1rem 3rem;
+  min-height: 100%;
+  background: #dde3ec;
+}
+
+.printBar {
+  display: flex;
+  justify-content: flex-end;
+  width: 794px;
+  max-width: 100%;
+  margin-bottom: 0.75rem;
+}
+
+.cv {
+  width: 794px;
+  min-height: 1123px;
+  display: flex;
+  background: #fff;
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.06),
+    0 8px 24px rgba(0,0,0,0.12),
+    0 24px 64px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 13px;
+  line-height: 1.55;
+  max-width: 100%;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+@media print {
+  :global(*) {
+    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact !important;
+  }
+
+  .wrapper {
+    padding: 0;
+    background: white;
+  }
+
+  .printBar {
+    display: none;
+  }
+
+  .cv {
+    width: 100%;
+    min-height: 100vh;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

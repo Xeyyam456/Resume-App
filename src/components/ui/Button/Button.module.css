@@ -1,0 +1,96 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  font-family: inherit;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s, opacity 0.18s;
+  white-space: nowrap;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ─── Sizes ─── */
+.sm {
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.md {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.875rem;
+}
+
+.lg {
+  padding: 0.65rem 1.5rem;
+  font-size: 1rem;
+}
+
+/* full-width modifier */
+.full {
+  width: 100%;
+}
+
+/* ─── Variants ─── */
+
+/* primary — solid cyan */
+.primary {
+  background: #0891b2;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
+}
+
+.primary:hover:not(:disabled) {
+  background: #0369a1;
+}
+
+/* dashed — add entry button */
+.dashed {
+  background: transparent;
+  color: #0891b2;
+  border: 2px dashed #0891b2;
+  border-radius: 10px;
+}
+
+.dashed:hover:not(:disabled) {
+  background: #ecfeff;
+  border-color: #06b6d4;
+  color: #0369a1;
+}
+
+/* ghost — subtle transparent, used for tabs */
+.ghost {
+  background: transparent;
+  color: #94a3b8;
+  border-radius: 6px;
+}
+
+.ghost:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.ghostActive {
+  background: #0891b2 !important;
+  color: #fff !important;
+}
+
+/* danger — remove / delete */
+.danger {
+  background: none;
+  color: #b0b8c8;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+}
+
+.danger:hover:not(:disabled) {
+  background: #fee2e2;
+  color: #ef4444;
+}

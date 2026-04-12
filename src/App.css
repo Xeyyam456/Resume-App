@@ -1,0 +1,110 @@
+/* ─── Layout ─── */
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ─── Header ─── */
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 56px;
+  background: #0f2027;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.app-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-header__icon {
+  font-size: 1.4rem;
+}
+
+.app-header__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Tabs (mobile only) ─── */
+/* Tab buttons styled via Button component (ghost variant) */
+
+/* ─── Main Two-Panel Layout ─── */
+.app-main {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background: #e8ebef;
+}
+
+.app-panel {
+  overflow-y: auto;
+}
+
+/* Desktop: side-by-side panels, hide tabs */
+@media (min-width: 900px) {
+  .app-panel--form {
+    flex: 0 0 44%;
+    max-width: 44%;
+    background: #f8fafc;
+    border-right: 1px solid #dde1e7;
+  }
+
+  .app-panel--preview {
+    flex: 1;
+    background: #e0e4ea;
+  }
+
+  .app-header__tabs {
+    display: none;
+  }
+
+  /* Both panels always visible on desktop */
+  .app-panel {
+    display: block !important;
+  }
+}
+
+/* Mobile: tabs toggle visibility */
+@media (max-width: 899px) {
+  .app-panel {
+    display: none;
+    width: 100%;
+    flex: 1;
+  }
+
+  .app-panel--active {
+    display: block;
+  }
+}
+
+/* ─── Print: show only CV ─── */
+@media print {
+  .app-header,
+  .app-panel--form {
+    display: none !important;
+  }
+
+  .app-main,
+  .app-panel--preview {
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    background: white !important;
+  }
+
+  body,
+  html {
+    height: auto !important;
+  }
+}
