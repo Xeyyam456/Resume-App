@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import ResumeForm from '@/components/form/ResumeForm'
 import ResumePreview from '@/components/preview/ResumePreview'
 import Button from '@/components/ui/Button'
@@ -44,7 +43,7 @@ function App() {
       ...prev,
       experience: [
         ...prev.experience,
-        { id: uuidv4(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
+        { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
       ],
     }))
   }
@@ -65,7 +64,7 @@ function App() {
       ...prev,
       education: [
         ...prev.education,
-        { id: uuidv4(), school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' },
+        { id: crypto.randomUUID(), school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' },
       ],
     }))
   }
@@ -84,7 +83,7 @@ function App() {
   const addSkill = () => {
     setResumeData(prev => ({
       ...prev,
-      skills: [...prev.skills, { id: uuidv4(), name: '', level: 'Intermediate' }],
+      skills: [...prev.skills, { id: crypto.randomUUID(), name: '', level: 'Intermediate' }],
     }))
   }
 
@@ -104,7 +103,7 @@ function App() {
       ...prev,
       projects: [
         ...prev.projects,
-        { id: uuidv4(), name: '', description: '', technologies: '', link: '' },
+        { id: crypto.randomUUID(), name: '', description: '', technologies: '', link: '' },
       ],
     }))
   }

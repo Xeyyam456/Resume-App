@@ -83,20 +83,27 @@ Bu fayldır ki, bütün tətbiq onun üzərindədir. Bir bina düşünün — `A
 
 ```jsx
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 ```
 
-React-ın içindən bir alət götürülür, `uuid` paketindən isə `v4` funksiyası:
+React-ın içindən bir alət götürülür:
 
 - **`useState`** — Komponentin yaddaşıdır. Normal JavaScript dəyişəni (`let x = 5`) React-da işləmir, çünki dəyər dəyişdikdə ekran yenilənmir. `useState` isə həm dəyəri saxlayır, həm dəyişdikdə ekranı avtomatik yeniləyir.
-
-- **`uuidv4`** — `uuid` paketi UUID standartına (RFC 4122) uyğun unikal ID yaratır. Məsələn: `"110e8400-e29b-41d4-a716-446655440000"`. `Math.random()`-ə əsaslanır, lakin çox daha uzun və nəzəri olaraq iki eyni ID'nin yaranma ehtimalı sıfıra bənzəyir.
 
 ```jsx
 import ResumeForm from '@/components/form/ResumeForm'
 import ResumePreview from '@/components/preview/ResumePreview'
 import Button from '@/components/ui/Button'
 ```
+
+---
+
+### `crypto.randomUUID()` — Unikal ID yaratmaq
+
+Heç bir npm paketi lazım deyil — brauzerə qurulu gəlir.
+
+`crypto.randomUUID()` hər çağırıldıqda tamamilə fərqli unikal bir sətir qaytarır. Məsələn: `"110e8400-e29b-41d4-a716-446655440000"`.
+
+**Niyə lazımdır?** Hər experience, education, skill, project əlavə edildikdə onların unikal "adı" (id) olmalıdır. React siyahılardakı elementləri bir-birindən ayırt etmək üçün bu id-dən istifadə edir. Əgər iki elementin id-si eyni olsaydı, biri silinəndə React hansını siləcəyini bilməzdi.
 
 ---
 
@@ -204,7 +211,7 @@ const addExperience = () => {
     ...prev,
     experience: [
       ...prev.experience,
-      { id: uuidv4(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
+      { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
     ],
   }))
 }
@@ -1199,10 +1206,8 @@ src/
 
 ```jsx
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 ```
 - `useState` — React hook-u. Komponentin yaddaşıdır. Bir dəyər saxlayır və dəyişdikdə ekranı yenidən render edir.
-- `uuidv4` — `uuid` paketi. `v4` funksiyasını `uuidv4` adı ilə import edirik. Hər çağırışda unikal UUID qaytarır: `"110e8400-e29b-41d4-a716-446655440000"`.
 
 ```jsx
 import ResumeForm from '@/components/form/ResumeForm'
@@ -1213,9 +1218,9 @@ import Button from '@/components/ui/Button'
 
 ---
 
-### `uuidv4` — Unikal ID yaratmaq
+### `crypto.randomUUID()` — Unikal ID yaratmaq
 
-`uuidv4()` hər çağırıldıqda tamamilə fərqli 36 simvollu UUID qaytarır.
+`crypto.randomUUID()` hər çağırıldıqda tamamilə fərqli 36 simvollu UUID qaytarır. Heç bir npm paketi lazım deyil — brauzərdə və Node.js-də nativ mövcuddur.
 
 **Niyə lazımdır?**
 Hər experience, education, skill, project əlavə edildikdə unikal `id` lazımdır. React `key` prop üçün, eyni zamanda hansı elementi yeniləyəcəyimizi müəyyən etmək üçün.
@@ -1312,7 +1317,7 @@ const addExperience = () => {
     ...prev,
     experience: [
       ...prev.experience,
-      { id: uuidv4(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
+      { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
     ],
   }))
 }
@@ -1321,7 +1326,7 @@ const addExperience = () => {
 **Sətir-sətir:**
 - `...prev.experience` — Köhnə experience massivini kopyalayır.
 - Sonuna yeni boş obyekt əlavə edilir.
-- `id: uuidv4()` — Yeni unikal UUID yaradılır.
+- `id: crypto.randomUUID()` — Yeni unikal ID yaradılır. Heç bir paket lazım deyil.
 - `current: false` — Başlanğıcda "bu işdə hələ işləyirəm" işarəlanmamışdır.
 - Bütün digər sahələr `''` — boş başlayır.
 
