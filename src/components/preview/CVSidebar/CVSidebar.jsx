@@ -1,14 +1,13 @@
 import PropTypes from 'prop-types'
 import styles from './CVSidebar.module.css'
 
-const LEVEL_DOTS = {
-  Beginner: 1,
-  Elementary: 2,
-  Intermediate: 3,
-  Advanced: 4,
-  Expert: 5,
+const LEVEL_WIDTHS = {
+  Beginner: 18,
+  Elementary: 36,
+  Intermediate: 55,
+  Advanced: 75,
+  Expert: 95,
 }
-const TOTAL_DOTS = 5
 
 function getInitials(firstName, lastName) {
   const f = firstName ? firstName[0].toUpperCase() : ''
@@ -23,22 +22,39 @@ function formatDate(dateStr) {
   return `${months[parseInt(month, 10) - 1]} ${year}`
 }
 
+function makeHref(value) {
+  if (!value) return null
+  if (value.startsWith('http://') || value.startsWith('https://')) return value
+  if (value.includes('@')) return `mailto:${value}`
+  return `https://${value}`
+}
+
 function CVSidebar({ personal, skills, education }) {
   const initials = getInitials(personal.firstName, personal.lastName)
 
   const contactItems = [
-    { icon: '✉', value: personal.email },
-    { icon: '✆', value: personal.phone },
-    { icon: '◎', value: personal.location },
-    { icon: '⊕', value: personal.website },
-    { icon: 'in', value: personal.linkedin },
+    { icon: '✉', value: personal.email, href: personal.email ? `mailto:${personal.email}` : null },
+    { icon: '✆', value: personal.phone, href: personal.phone ? `tel:${personal.phone}` : null },
+    { icon: '◎', value: personal.location, href: null },
+    { icon: '↗', value: personal.website, href: makeHref(personal.website) },
+    { icon: 'in', value: personal.linkedin, href: makeHref(personal.linkedin) },
   ].filter(item => item.value)
 
   return (
     <aside className={styles.sidebar}>
-      <div className={styles.avatar}>{initials}</div>
-      <div className={styles.avatarRing} />
+      <div className={styles.sidebarHeader}>
+        <div className={styles.avatarWrap}>
+          <div className={styles.avatar}>
+            {personal.photo ? (
+              <img src={personal.photo} alt="Profile" className={styles.avatarImg} />
+            ) : (
+              initials
+            )}
+          </div>
+        </div>
+      </div>
 
+      <div className={styles.sidebarBody}>
       {contactItems.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionTitle}>Contact</div>
@@ -46,7 +62,11 @@ function CVSidebar({ personal, skills, education }) {
             {contactItems.map((item, i) => (
               <li key={i} className={styles.contactItem}>
                 <span className={styles.contactIcon}>{item.icon}</span>
-                <span>{item.value}</span>
+                {item.href ? (
+                  <a href={item.href} target="_blank" rel="noreferrer" className={styles.contactLink}>{item.value}</a>
+                ) : (
+                  <span>{item.value}</span>
+                )}
               </li>
             ))}
           </ul>
@@ -56,22 +76,22 @@ function CVSidebar({ personal, skills, education }) {
       {skills.length > 0 && (
         <div className={styles.section}>
           <div className={styles.sectionTitle}>Skills</div>
-          {skills.map(skill => (
-            <div key={skill.id} className={styles.skill}>
-              <div className={styles.skillName}>
-                <span>{skill.name}</span>
-                <span className={styles.skillLevelText}>{skill.level}</span>
-              </div>
-              <div className={styles.dotTrack}>
-                {Array.from({ length: TOTAL_DOTS }).map((_, idx) => (
+          <div className={styles.skillList}>
+            {skills.map(skill => (
+              <div key={skill.id} className={styles.skill}>
+                <div className={styles.skillRow}>
+                  <span className={styles.skillName}>{skill.name}</span>
+                  <span className={styles.skillBadge}>{skill.level}</span>
+                </div>
+                <div className={styles.barTrack}>
                   <div
-                    key={idx}
-                    className={`${styles.dot} ${idx < (LEVEL_DOTS[skill.level] ?? 3) ? styles.dotFilled : ''}`}
+                    className={styles.barFill}
+                    style={{ width: `${LEVEL_WIDTHS[skill.level] ?? 50}%` }}
                   />
-                ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
 
@@ -95,6 +115,7 @@ function CVSidebar({ personal, skills, education }) {
           })}
         </div>
       )}
+      </div>
     </aside>
   )
 }
@@ -108,6 +129,7 @@ CVSidebar.propTypes = {
     location: PropTypes.string,
     website: PropTypes.string,
     linkedin: PropTypes.string,
+    photo: PropTypes.string,
   }).isRequired,
   skills: PropTypes.arrayOf(
     PropTypes.shape({

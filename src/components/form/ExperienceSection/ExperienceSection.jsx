@@ -45,14 +45,12 @@ function ExperienceSection({ experiences, onAdd, onUpdate, onRemove }) {
                 onChange={val => onUpdate(exp.id, 'startDate', val)}
               />
               <div>
-                <div style={{ fontSize: '0.775rem', fontWeight: 600, color: '#475569', letterSpacing: '0.3px', textTransform: 'uppercase', marginBottom: '0.35rem' }}>
-                  End Date
-                </div>
+                <div className={styles.endDateLabel}>End Date</div>
                 {exp.current ? (
                   <div className={styles.inputDisabled}>Present</div>
                 ) : (
                   <input
-                    style={{ border: '1.5px solid #dde3ed', borderRadius: '8px', padding: '0.55rem 0.8rem', fontSize: '0.9rem', fontFamily: 'inherit', color: '#1e293b', background: '#f8fafc', outline: 'none', width: '100%' }}
+                    className={styles.endDateInput}
                     type="month"
                     id={`exp-end-${exp.id}`}
                     value={exp.endDate}

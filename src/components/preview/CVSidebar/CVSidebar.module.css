@@ -1,95 +1,93 @@
+/* ═══════════════════════════════
+   SIDEBAR — solid deep navy
+═══════════════════════════════ */
 .sidebar {
   width: 33%;
   flex-shrink: 0;
-  background: linear-gradient(160deg, #0d1b2a 0%, #1a1040 50%, #0d1b2a 100%);
+  background: #141c35;
   color: #e2e8f0;
-  padding: 2.5rem 1.5rem 2rem;
   display: flex;
   flex-direction: column;
-  position: relative;
   overflow: hidden;
 }
 
-/* decorative blurred orbs */
-.sidebar::before {
-  content: '';
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(99,102,241,0.25) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+/* ─── Header (avatar area) — same bg, no gradient ─── */
+.sidebarHeader {
+  background: transparent;
+  padding: 2.5rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  position: relative;
 }
 
-.sidebar::after {
+.sidebarHeader::after {
   content: '';
   position: absolute;
-  bottom: 80px;
-  left: -80px;
-  width: 220px;
-  height: 220px;
-  background: radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+  bottom: 0;
+  left: 1.5rem;
+  right: 1.5rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
 }
 
 /* ─── Avatar ─── */
+.avatarWrap {
+  display: flex;
+  justify-content: center;
+}
+
 .avatar {
-  width: 80px;
-  height: 80px;
+  width: 96px;
+  height: 96px;
   border-radius: 50%;
   background: linear-gradient(135deg, #6366f1 0%, #06b6d4 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.7rem;
+  font-size: 1.9rem;
   font-weight: 800;
   color: #fff;
-  margin: 0 auto 0.6rem;
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 1;
+  overflow: hidden;
+  border: 3px solid rgba(255, 255, 255, 0.18);
   box-shadow:
-    0 0 0 3px rgba(99,102,241,0.4),
-    0 0 0 6px rgba(99,102,241,0.15),
-    0 8px 24px rgba(99,102,241,0.4);
+    0 0 0 6px rgba(99, 102, 241, 0.12),
+    0 16px 40px rgba(0, 0, 0, 0.55);
+  flex-shrink: 0;
+  letter-spacing: 1px;
 }
 
-.avatarRing {
-  width: 96px;
-  height: 4px;
-  background: linear-gradient(90deg, transparent, #6366f1, #06b6d4, transparent);
-  margin: 0 auto 1.75rem;
-  border-radius: 99px;
-  opacity: 0.6;
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── Sidebar Body ─── */
+.sidebarBody {
+  padding: 1.75rem 1.5rem 2rem;
+  flex: 1;
 }
 
 /* ─── Section ─── */
 .section {
   margin-bottom: 1.6rem;
-  position: relative;
-  z-index: 1;
 }
 
 .sectionTitle {
-  font-size: 8.5px;
+  font-size: 9px;
   font-weight: 800;
-  letter-spacing: 3px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #6366f1;
+  color: #7c86f7;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.8rem;
-}
-
-.sectionTitle::after {
-  content: '';
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(99,102,241,0.4), transparent);
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.18);
 }
 
 /* ─── Contact ─── */
@@ -97,30 +95,24 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-size: 10.5px;
-  color: #94a3b8;
+  gap: 0.65rem;
+  font-size: 11px;
+  color: #8fa0bc;
   word-break: break-all;
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  transition: background 0.15s;
-}
-
-.contactItem:hover {
-  background: rgba(255,255,255,0.05);
 }
 
 .contactIcon {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
   border-radius: 6px;
-  background: rgba(99,102,241,0.2);
+  background: rgba(99, 102, 241, 0.15);
+  border: 1px solid rgba(99, 102, 241, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,51 +121,73 @@
   color: #818cf8;
 }
 
-/* ─── Skills ─── */
-.skill {
-  margin-bottom: 0.6rem;
+.contactLink {
+  color: #8fa0bc;
+  text-decoration: none;
+  word-break: break-all;
+  transition: color 0.15s;
 }
 
-.skillName {
-  font-size: 11px;
-  color: #cbd5e1;
-  margin-bottom: 0.35rem;
+.contactLink:hover {
+  color: #a5b4fc;
+}
+
+/* ─── Skills ─── */
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.skillRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.skillLevelText {
-  font-size: 8.5px;
-  color: #475569;
+.skillName {
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #cbd5e1;
+}
+
+.skillBadge {
+  font-size: 8.5px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
   text-transform: uppercase;
+  color: #818cf8;
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  padding: 0.1rem 0.5rem;
+  border-radius: 99px;
 }
 
-.dotTrack {
-  display: flex;
-  gap: 4px;
+.barTrack {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 99px;
+  overflow: hidden;
 }
 
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-.dotFilled {
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
-  border-color: transparent;
-  box-shadow: 0 0 6px rgba(99,102,241,0.6);
+.barFill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #6366f1, #818cf8);
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
 }
 
 /* ─── Education ─── */
 .eduItem {
   padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .eduItem:last-child {
@@ -181,20 +195,20 @@
 }
 
 .eduDegree {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   color: #e2e8f0;
   line-height: 1.35;
 }
 
 .eduSchool {
-  font-size: 10.5px;
-  color: #64748b;
+  font-size: 11px;
+  color: #475569;
   margin-top: 2px;
 }
 
 .eduDate {
-  font-size: 9.5px;
-  color: #334155;
-  margin-top: 3px;
+  font-size: 10px;
+  color: #2d3f5c;
+  margin-top: 2px;
 }

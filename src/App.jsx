@@ -1,10 +1,9 @@
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import ResumeForm from '@/components/form/ResumeForm'
 import ResumePreview from '@/components/preview/ResumePreview'
 import Button from '@/components/ui/Button'
 import './App.css'
-
-const generateId = () => Math.random().toString(36).substr(2, 9)
 
 const initialResumeData = {
   personal: {
@@ -16,6 +15,7 @@ const initialResumeData = {
     location: '',
     website: '',
     linkedin: '',
+    photo: '',
   },
   summary: '',
   experience: [],
@@ -28,102 +28,97 @@ function App() {
   const [resumeData, setResumeData] = useState(initialResumeData)
   const [activeTab, setActiveTab] = useState('form')
 
-  /* ─── Personal & Summary ─── */
-  const updatePersonal = useCallback((field, value) => {
+  const updatePersonal = (field, value) => {
     setResumeData(prev => ({
       ...prev,
       personal: { ...prev.personal, [field]: value },
     }))
-  }, [])
+  }
 
-  const updateSummary = useCallback((value) => {
+  const updateSummary = (value) => {
     setResumeData(prev => ({ ...prev, summary: value }))
-  }, [])
+  }
 
-  /* ─── Experience ─── */
-  const addExperience = useCallback(() => {
+  const addExperience = () => {
     setResumeData(prev => ({
       ...prev,
       experience: [
         ...prev.experience,
-        { id: generateId(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
+        { id: uuidv4(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
       ],
     }))
-  }, [])
+  }
 
-  const updateExperience = useCallback((id, field, value) => {
+  const updateExperience = (id, field, value) => {
     setResumeData(prev => ({
       ...prev,
       experience: prev.experience.map(exp => (exp.id === id ? { ...exp, [field]: value } : exp)),
     }))
-  }, [])
+  }
 
-  const removeExperience = useCallback((id) => {
+  const removeExperience = (id) => {
     setResumeData(prev => ({ ...prev, experience: prev.experience.filter(exp => exp.id !== id) }))
-  }, [])
+  }
 
-  /* ─── Education ─── */
-  const addEducation = useCallback(() => {
+  const addEducation = () => {
     setResumeData(prev => ({
       ...prev,
       education: [
         ...prev.education,
-        { id: generateId(), school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' },
+        { id: uuidv4(), school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' },
       ],
     }))
-  }, [])
+  }
 
-  const updateEducation = useCallback((id, field, value) => {
+  const updateEducation = (id, field, value) => {
     setResumeData(prev => ({
       ...prev,
       education: prev.education.map(edu => (edu.id === id ? { ...edu, [field]: value } : edu)),
     }))
-  }, [])
+  }
 
-  const removeEducation = useCallback((id) => {
+  const removeEducation = (id) => {
     setResumeData(prev => ({ ...prev, education: prev.education.filter(edu => edu.id !== id) }))
-  }, [])
+  }
 
-  /* ─── Skills ─── */
-  const addSkill = useCallback(() => {
+  const addSkill = () => {
     setResumeData(prev => ({
       ...prev,
-      skills: [...prev.skills, { id: generateId(), name: '', level: 'Intermediate' }],
+      skills: [...prev.skills, { id: uuidv4(), name: '', level: 'Intermediate' }],
     }))
-  }, [])
+  }
 
-  const updateSkill = useCallback((id, field, value) => {
+  const updateSkill = (id, field, value) => {
     setResumeData(prev => ({
       ...prev,
       skills: prev.skills.map(skill => (skill.id === id ? { ...skill, [field]: value } : skill)),
     }))
-  }, [])
+  }
 
-  const removeSkill = useCallback((id) => {
+  const removeSkill = (id) => {
     setResumeData(prev => ({ ...prev, skills: prev.skills.filter(skill => skill.id !== id) }))
-  }, [])
+  }
 
-  /* ─── Projects ─── */
-  const addProject = useCallback(() => {
+  const addProject = () => {
     setResumeData(prev => ({
       ...prev,
       projects: [
         ...prev.projects,
-        { id: generateId(), name: '', description: '', technologies: '', link: '' },
+        { id: uuidv4(), name: '', description: '', technologies: '', link: '' },
       ],
     }))
-  }, [])
+  }
 
-  const updateProject = useCallback((id, field, value) => {
+  const updateProject = (id, field, value) => {
     setResumeData(prev => ({
       ...prev,
       projects: prev.projects.map(proj => (proj.id === id ? { ...proj, [field]: value } : proj)),
     }))
-  }, [])
+  }
 
-  const removeProject = useCallback((id) => {
+  const removeProject = (id) => {
     setResumeData(prev => ({ ...prev, projects: prev.projects.filter(proj => proj.id !== id) }))
-  }, [])
+  }
 
   const handlers = {
     updatePersonal,

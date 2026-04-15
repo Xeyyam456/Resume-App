@@ -12,13 +12,19 @@
 }
 
 :root {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #1a1a2e;
-  background-color: #f0f2f5;
+  color: #1e293b;
+  background-color: #0f1623;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --accent: #6366f1;
+  --accent2: #06b6d4;
+  --accent-glow: rgba(99, 102, 241, 0.25);
+  --surface: rgba(255, 255, 255, 0.04);
+  --border: rgba(255, 255, 255, 0.08);
 }
 
 body {

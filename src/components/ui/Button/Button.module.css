@@ -8,12 +8,14 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border-color 0.18s, box-shadow 0.18s, opacity 0.18s;
+  transition: all 0.2s ease;
   white-space: nowrap;
+  position: relative;
+  letter-spacing: 0.2px;
 }
 
 .btn:disabled {
-  opacity: 0.45;
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
@@ -40,57 +42,63 @@
 
 /* ─── Variants ─── */
 
-/* primary — solid cyan */
+/* primary — gradient indigo→cyan */
 .primary {
-  background: #0891b2;
+  background: linear-gradient(135deg, #6366f1, #06b6d4);
   color: #fff;
-  box-shadow: 0 2px 8px rgba(8, 145, 178, 0.3);
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
 }
 
 .primary:hover:not(:disabled) {
-  background: #0369a1;
+  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+  transform: translateY(-1px);
 }
 
-/* dashed — add entry button */
+.primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* dashed — add entry */
 .dashed {
-  background: transparent;
-  color: #0891b2;
-  border: 2px dashed #0891b2;
+  background: rgba(99, 102, 241, 0.05);
+  color: #818cf8;
+  border: 1.5px dashed rgba(99, 102, 241, 0.4);
   border-radius: 10px;
 }
 
 .dashed:hover:not(:disabled) {
-  background: #ecfeff;
-  border-color: #06b6d4;
-  color: #0369a1;
+  background: rgba(99, 102, 241, 0.12);
+  border-color: #6366f1;
+  color: #a5b4fc;
 }
 
-/* ghost — subtle transparent, used for tabs */
+/* ghost — tabs */
 .ghost {
   background: transparent;
-  color: #94a3b8;
-  border-radius: 6px;
+  color: #64748b;
+  border-radius: 8px;
+  padding: 0.35rem 0.9rem;
 }
 
 .ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+  color: #e2e8f0;
 }
 
 .ghostActive {
-  background: #0891b2 !important;
-  color: #fff !important;
+  background: rgba(99, 102, 241, 0.2) !important;
+  color: #a5b4fc !important;
+  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35) !important;
 }
 
-/* danger — remove / delete */
+/* danger — remove */
 .danger {
   background: none;
-  color: #b0b8c8;
+  color: #475569;
   border-radius: 6px;
-  padding: 0.3rem 0.6rem;
 }
 
 .danger:hover:not(:disabled) {
-  background: #fee2e2;
-  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+  color: #f87171;
 }
