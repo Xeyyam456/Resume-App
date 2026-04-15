@@ -38,102 +38,42 @@ function App() {
     setResumeData(prev => ({ ...prev, summary: value }))
   }
 
-  const addExperience = () => {
+  const addItem = (key, template) => {
     setResumeData(prev => ({
       ...prev,
-      experience: [
-        ...prev.experience,
-        { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
-      ],
+      [key]: [...prev[key], { id: crypto.randomUUID(), ...template }],
     }))
   }
 
-  const updateExperience = (id, field, value) => {
+  const updateItem = (key, id, field, value) => {
     setResumeData(prev => ({
       ...prev,
-      experience: prev.experience.map(exp => (exp.id === id ? { ...exp, [field]: value } : exp)),
+      [key]: prev[key].map(item => (item.id === id ? { ...item, [field]: value } : item)),
     }))
   }
 
-  const removeExperience = (id) => {
-    setResumeData(prev => ({ ...prev, experience: prev.experience.filter(exp => exp.id !== id) }))
-  }
-
-  const addEducation = () => {
+  const removeItem = (key, id) => {
     setResumeData(prev => ({
       ...prev,
-      education: [
-        ...prev.education,
-        { id: crypto.randomUUID(), school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' },
-      ],
+      [key]: prev[key].filter(item => item.id !== id),
     }))
-  }
-
-  const updateEducation = (id, field, value) => {
-    setResumeData(prev => ({
-      ...prev,
-      education: prev.education.map(edu => (edu.id === id ? { ...edu, [field]: value } : edu)),
-    }))
-  }
-
-  const removeEducation = (id) => {
-    setResumeData(prev => ({ ...prev, education: prev.education.filter(edu => edu.id !== id) }))
-  }
-
-  const addSkill = () => {
-    setResumeData(prev => ({
-      ...prev,
-      skills: [...prev.skills, { id: crypto.randomUUID(), name: '', level: 'Intermediate' }],
-    }))
-  }
-
-  const updateSkill = (id, field, value) => {
-    setResumeData(prev => ({
-      ...prev,
-      skills: prev.skills.map(skill => (skill.id === id ? { ...skill, [field]: value } : skill)),
-    }))
-  }
-
-  const removeSkill = (id) => {
-    setResumeData(prev => ({ ...prev, skills: prev.skills.filter(skill => skill.id !== id) }))
-  }
-
-  const addProject = () => {
-    setResumeData(prev => ({
-      ...prev,
-      projects: [
-        ...prev.projects,
-        { id: crypto.randomUUID(), name: '', description: '', technologies: '', link: '' },
-      ],
-    }))
-  }
-
-  const updateProject = (id, field, value) => {
-    setResumeData(prev => ({
-      ...prev,
-      projects: prev.projects.map(proj => (proj.id === id ? { ...proj, [field]: value } : proj)),
-    }))
-  }
-
-  const removeProject = (id) => {
-    setResumeData(prev => ({ ...prev, projects: prev.projects.filter(proj => proj.id !== id) }))
   }
 
   const handlers = {
     updatePersonal,
     updateSummary,
-    addExperience,
-    updateExperience,
-    removeExperience,
-    addEducation,
-    updateEducation,
-    removeEducation,
-    addSkill,
-    updateSkill,
-    removeSkill,
-    addProject,
-    updateProject,
-    removeProject,
+    addExperience:    () => addItem('experience', { company: '', position: '', startDate: '', endDate: '', current: false, description: '' }),
+    updateExperience: (id, field, value) => updateItem('experience', id, field, value),
+    removeExperience: (id) => removeItem('experience', id),
+    addEducation:     () => addItem('education', { school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' }),
+    updateEducation:  (id, field, value) => updateItem('education', id, field, value),
+    removeEducation:  (id) => removeItem('education', id),
+    addSkill:         () => addItem('skills', { name: '', level: 'Intermediate' }),
+    updateSkill:      (id, field, value) => updateItem('skills', id, field, value),
+    removeSkill:      (id) => removeItem('skills', id),
+    addProject:       () => addItem('projects', { name: '', description: '', technologies: '', link: '' }),
+    updateProject:    (id, field, value) => updateItem('projects', id, field, value),
+    removeProject:    (id) => removeItem('projects', id),
   }
 
   return (

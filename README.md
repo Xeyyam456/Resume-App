@@ -203,68 +203,46 @@ const updateSummary = (value) => {
 
 ---
 
-### `addExperience` funksiyası
+### `addItem`, `updateItem`, `removeItem` — Ümumi helperlər
+
+Əvvəllər hər bölmə üçün (experience, education, skills, projects) ayrıca `add`, `update`, `remove` funksiyaları var idi — 12 funksiya, hamısı demək olar ki, eyni. İndi 3 ümumi helper funksiya var, hər bölmə onları istifadə edir.
 
 ```jsx
-const addExperience = () => {
+const addItem = (key, template) => {
   setResumeData(prev => ({
     ...prev,
-    experience: [
-      ...prev.experience,
-      { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
-    ],
+    [key]: [...prev[key], { id: crypto.randomUUID(), ...template }],
   }))
 }
 ```
 
-"Add Experience" düyməsinə basıldıqda bu çağırılır. Köhnə experience siyahısını kopyalayır (`...prev.experience`), sonuna tamamilə boş yeni bir iş təcrübəsi əlavə edir. `current: false` — "Burada hələ işləyirəm" checkbox-u başlanğıcda işarələnməyib.
-
----
-
-### `updateExperience` funksiyası
+- `key` — State-in hansı sahəsi dəyişəcək: `'experience'`, `'education'`, `'skills'` və ya `'projects'`.
+- `template` — Yeni elementin boş sahələri. Məsələn experience üçün: `{ company: '', position: '', ... }`.
+- `[key]` — Computed property. `key = 'skills'` olduqda `[key]` ifadəsi `skills` kimi işləyir.
+- `{ id: crypto.randomUUID(), ...template }` — Avtomatik unikal ID əlavə edilir, sonra template-in sahələri yayılır.
 
 ```jsx
-const updateExperience = (id, field, value) => {
+const updateItem = (key, id, field, value) => {
   setResumeData(prev => ({
     ...prev,
-    experience: prev.experience.map(exp =>
-      exp.id === id ? { ...exp, [field]: value } : exp
-    ),
+    [key]: prev[key].map(item => (item.id === id ? { ...item, [field]: value } : item)),
   }))
 }
 ```
 
-İstifadəçi hər hansı bir experience-in hər hansı bir sahəsini dəyişdirəndə bu çağırılır. Üç parametr alır:
-- `id` — Hansı experience dəyişir.
-- `field` — Həmin experience-in hansı sahəsi dəyişir (`'position'`, `'company'` və s.)
-- `value` — Yeni dəyər.
-
-`.map(exp => ...)` — Experience siyahısının hər elementinin üzərindən keçir.
-
-`exp.id === id ? ... : exp` — Ternary operator. "Əgər bu element dəyişdirilməli olandırsa, yenilə; yoxsa olduğu kimi saxla" mənasındadır.
-
-`{ ...exp, [field]: value }` — Həmin experience-in bütün sahələrini kopyalayır, yalnız dəyişəni əvəz edir.
-
----
-
-### `removeExperience` funksiyası
+- `prev[key].map(...)` — Müvafiq siyahının hər elementi üzərindən keçir.
+- `item.id === id ? { ...item, [field]: value } : item` — Tapılan elementi yeniləyir, qalanları toxunmadan saxlayır.
 
 ```jsx
-const removeExperience = (id) => {
+const removeItem = (key, id) => {
   setResumeData(prev => ({
     ...prev,
-    experience: prev.experience.filter(exp => exp.id !== id)
+    [key]: prev[key].filter(item => item.id !== id),
   }))
 }
 ```
 
-`✕` düyməsinə basıldıqda bu çağırılır. `.filter(exp => exp.id !== id)` — "id-si göndərilən ilə eyni olmayan bütün elementləri saxla" mənasındadır. Nəticədə silinəcək element siyahıdan çıxır.
-
----
-
-### Education, Skills, Projects funksiyaları
-
-Bu üç bölmə üçün `add`, `update`, `remove` funksiyaları var. Onlar Experience funksiyaları ilə eyni məntiqlə işləyir, yalnız fərq odur ki, `experience` əvəzinə `education`, `skills` və ya `projects` sahəsinə müraciət edirlər.
+- `.filter(item => item.id !== id)` — Silinəcək id-dən başqa hamısını saxlayır.
 
 ---
 
@@ -274,22 +252,24 @@ Bu üç bölmə üçün `add`, `update`, `remove` funksiyaları var. Onlar Exper
 const handlers = {
   updatePersonal,
   updateSummary,
-  addExperience,
-  updateExperience,
-  removeExperience,
-  addEducation,
-  updateEducation,
-  removeEducation,
-  addSkill,
-  updateSkill,
-  removeSkill,
-  addProject,
-  updateProject,
-  removeProject,
+  addExperience:    () => addItem('experience', { company: '', position: '', startDate: '', endDate: '', current: false, description: '' }),
+  updateExperience: (id, field, value) => updateItem('experience', id, field, value),
+  removeExperience: (id) => removeItem('experience', id),
+  addEducation:     () => addItem('education', { school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' }),
+  updateEducation:  (id, field, value) => updateItem('education', id, field, value),
+  removeEducation:  (id) => removeItem('education', id),
+  addSkill:         () => addItem('skills', { name: '', level: 'Intermediate' }),
+  updateSkill:      (id, field, value) => updateItem('skills', id, field, value),
+  removeSkill:      (id) => removeItem('skills', id),
+  addProject:       () => addItem('projects', { name: '', description: '', technologies: '', link: '' }),
+  updateProject:    (id, field, value) => updateItem('projects', id, field, value),
+  removeProject:    (id) => removeItem('projects', id),
 }
 ```
 
-14 funksiyanı ayrı-ayrı prop kimi göndərmək yerinə, hamısını bir `handlers` obyektinə yığırıq. `ResumeForm`-a yalnız `handlers={handlers}` göndərmək kifayət edir. `ResumeForm` isə bu funksiyaları öz alt-komponentlərinə paylaşdırır.
+Bütün handler-lar bir `handlers` obyektinə yığılıb. `ResumeForm`-a yalnız `handlers={handlers}` göndərmək kifayətdir. `ResumeForm` isə bu funksiyaları öz alt-komponentlərinə paylaşdırır.
+
+Hər bölmənin add/update/remove funksiyaları artıq ayrıca yazılmayıb — burada inline olaraq müvafiq key və template ilə ümumi helperlərə yönləndirilir.
 
 ---
 
@@ -1309,67 +1289,50 @@ const updateSummary = (value) => {
 
 ---
 
-### `addExperience` funksiyası
+### `addItem`, `updateItem`, `removeItem` — Ümumi helperlər
+
+Hər bölmə (experience, education, skills, projects) üçün ayrıca add/update/remove yazmaq əvəzinə, 3 ümumi helper funksiya yazılıb.
 
 ```jsx
-const addExperience = () => {
+const addItem = (key, template) => {
   setResumeData(prev => ({
     ...prev,
-    experience: [
-      ...prev.experience,
-      { id: crypto.randomUUID(), company: '', position: '', startDate: '', endDate: '', current: false, description: '' },
-    ],
+    [key]: [...prev[key], { id: crypto.randomUUID(), ...template }],
   }))
 }
 ```
 
 **Sətir-sətir:**
-- `...prev.experience` — Köhnə experience massivini kopyalayır.
-- Sonuna yeni boş obyekt əlavə edilir.
-- `id: crypto.randomUUID()` — Yeni unikal ID yaradılır. Heç bir paket lazım deyil.
-- `current: false` — Başlanğıcda "bu işdə hələ işləyirəm" işarəlanmamışdır.
-- Bütün digər sahələr `''` — boş başlayır.
-
----
-
-### `updateExperience` funksiyası
+- `key` — Hansı siyahıya element əlavə ediləcək: `'experience'`, `'skills'` və s.
+- `template` — Yeni elementin boş sahələri. Məsələn: `{ company: '', position: '', ... }`.
+- `[key]` — Computed property. `key = 'skills'` olduqda `prev['skills']` kimi işləyir.
+- `{ id: crypto.randomUUID(), ...template }` — Əvvəlcə unikal ID yaranır, sonra template-in sahələri yayılır.
 
 ```jsx
-const updateExperience = (id, field, value) => {
+const updateItem = (key, id, field, value) => {
   setResumeData(prev => ({
     ...prev,
-    experience: prev.experience.map(exp =>
-      (exp.id === id ? { ...exp, [field]: value } : exp)
-    ),
+    [key]: prev[key].map(item => (item.id === id ? { ...item, [field]: value } : item)),
   }))
 }
 ```
 
 **Sətir-sətir:**
-- `prev.experience.map(...)` — Hər experience elementinin üzərindən keçir.
-- `exp.id === id` — Yalnız dəyişdirilməli olanı tapır.
-- `? { ...exp, [field]: value }` — Həmin elementi kopyalayıb yalnız dəyişən sahəni əvəz edir.
-- `: exp` — Qalanları olduğu kimi saxlayır.
-
----
-
-### `removeExperience` funksiyası
+- `prev[key].map(...)` — Müvafiq siyahının hər elementi üzərindən keçir.
+- `item.id === id` — Dəyişdirilməli olanı tapır.
+- `? { ...item, [field]: value }` — Tapılanı kopyalayıb yalnız dəyişən sahəni əvəz edir.
+- `: item` — Qalanları toxunmadan saxlayır.
 
 ```jsx
-const removeExperience = (id) => {
+const removeItem = (key, id) => {
   setResumeData(prev => ({
     ...prev,
-    experience: prev.experience.filter(exp => exp.id !== id)
+    [key]: prev[key].filter(item => item.id !== id),
   }))
 }
 ```
-- `.filter(exp => exp.id !== id)` — Silinəcək `id`-yə sahib elementdən başqa hamısını saxlayır.
 
----
-
-### Education, Skills, Projects funksiyaları
-
-Education, Skills və Projects üçün `add`, `update`, `remove` funksiyaları tam eyni məntiqlə yazılmışdır — yalnız state-in açarı fərqlidir (`education`, `skills`, `projects`).
+- `.filter(item => item.id !== id)` — Silinəcək `id`-yə sahib elementdən başqa hamısını saxlayır.
 
 ---
 
@@ -1379,28 +1342,30 @@ Education, Skills və Projects üçün `add`, `update`, `remove` funksiyaları t
 const handlers = {
   updatePersonal,
   updateSummary,
-  addExperience,
-  updateExperience,
-  removeExperience,
-  addEducation,
-  updateEducation,
-  removeEducation,
-  addSkill,
-  updateSkill,
-  removeSkill,
-  addProject,
-  updateProject,
-  removeProject,
+  addExperience:    () => addItem('experience', { company: '', position: '', startDate: '', endDate: '', current: false, description: '' }),
+  updateExperience: (id, field, value) => updateItem('experience', id, field, value),
+  removeExperience: (id) => removeItem('experience', id),
+  addEducation:     () => addItem('education', { school: '', degree: '', field: '', startDate: '', endDate: '', gpa: '' }),
+  updateEducation:  (id, field, value) => updateItem('education', id, field, value),
+  removeEducation:  (id) => removeItem('education', id),
+  addSkill:         () => addItem('skills', { name: '', level: 'Intermediate' }),
+  updateSkill:      (id, field, value) => updateItem('skills', id, field, value),
+  removeSkill:      (id) => removeItem('skills', id),
+  addProject:       () => addItem('projects', { name: '', description: '', technologies: '', link: '' }),
+  updateProject:    (id, field, value) => updateItem('projects', id, field, value),
+  removeProject:    (id) => removeItem('projects', id),
 }
 ```
 
-**Niyə ayrı obyektdə toplanıb?**
-- `ResumeForm`-a 14 ayrı prop göndərmək əvəzinə, 1 `handlers` prop göndərmək daha səliqəlidir.
-- `ResumeForm` bu funksiyaları alt-komponentlərə ötürür.
+Bütün handler-lar bir `handlers` obyektinə yığılıb — `ResumeForm`-a yalnız `handlers={handlers}` göndərmək kifayətdir.
+
+Hər bölmənin add/update/remove funksiyaları ayrıca yazılmayıb — burada inline olaraq müvafiq `key` və `template` ilə ümumi helperlərə yönləndirilir.
+
+**Niyə belə daha yaxşıdır?**
+Öncə 12 ayrı funksiya var idi (3 × 4 bölmə). İndi 3 helper + `handlers`-də inline çağırışlar. Yeni bölmə əlavə etmək lazım gəlsə, yalnız `handlers`-ə 3 sətir əlavə etmək kifayətdir.
 
 ---
 
-### JSX hissəsi (return)
 
 ```jsx
 return (
