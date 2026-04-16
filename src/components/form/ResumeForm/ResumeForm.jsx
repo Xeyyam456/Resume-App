@@ -30,6 +30,7 @@ function ResumeForm({ resumeData, handlers }) {
     <form className={styles.panel} onSubmit={e => e.preventDefault()}>
       <PersonalInfoSection personal={personal} onUpdate={updatePersonal} />
       <SummarySection summary={summary} onUpdate={updateSummary} />
+      
       <ExperienceSection
         experiences={experience}
         onAdd={addExperience}

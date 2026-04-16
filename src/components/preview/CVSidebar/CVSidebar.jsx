@@ -6,7 +6,7 @@ const LEVEL_WIDTHS = {
   Elementary: 36,
   Intermediate: 55,
   Advanced: 75,
-  Expert: 95,
+  Expert: 100,
 }
 
 function getInitials(firstName, lastName) {
