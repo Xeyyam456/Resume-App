@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './BannerTemplate.module.css'
+import styles from '../styles/BannerHeader.module.css'
 
 function BannerHeader({ photo, initials, fullName, jobTitle, contactItems }) {
   return (

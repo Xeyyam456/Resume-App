@@ -5,7 +5,7 @@ import ExperienceSection from '@/components/form/ExperienceSection'
 import EducationSection from '@/components/form/EducationSection'
 import SkillsSection from '@/components/form/SkillsSection'
 import ProjectsSection from '@/components/form/ProjectsSection'
-import styles from './ResumeForm.module.css'
+import styles from '../styles/ResumeForm.module.css'
 
 function ResumeForm({ resumeData, handlers }) {
   const { personal, summary, experience, education, skills, projects } = resumeData

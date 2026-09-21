@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
-import styles from './DiagonalTemplate.module.css'
+import styles from '../styles/DiagonalLeft.module.css'
 
 function DiagonalLeft({ fullName, jobTitle, summary, experience, projects }) {
   const isEmpty = !summary && experience.length === 0 && projects.length === 0

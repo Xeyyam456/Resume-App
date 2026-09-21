@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './BannerTemplate.module.css'
+import styles from '../styles/BannerTimeline.module.css'
 
 function BannerTimeline({ timeline, projects }) {
   return (

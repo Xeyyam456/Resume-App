@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import MainHeader from './MainHeader'
 import MainExperience from './MainExperience'
 import MainProjects from './MainProjects'
-import styles from './CVMain.module.css'
+import styles from '../styles/CVMain.module.css'
 
 function CVMain({ personal, summary, experience, projects }) {
   const fullName = [personal.firstName, personal.lastName].filter(Boolean).join(' ')

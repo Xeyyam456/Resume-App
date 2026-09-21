@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { SKILL_LEVEL_RANKS } from '@/utils/constants'
-import styles from './MonochromeTemplate.module.css'
+import styles from '../styles/MonochromeSide.module.css'
 
 function MonochromeSide({ photo, initials, fullName, jobTitle, contactItems, education, skills }) {
   return (

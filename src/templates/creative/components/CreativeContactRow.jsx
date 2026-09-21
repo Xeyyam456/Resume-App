@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CreativeTemplate.module.css'
+import styles from '../styles/CreativeContactRow.module.css'
 
 function CreativeContactRow({ items }) {
   if (items.length === 0) return null

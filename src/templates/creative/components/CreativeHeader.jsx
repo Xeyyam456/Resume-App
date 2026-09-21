@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import CreativeHeading from './CreativeHeading'
-import styles from './CreativeTemplate.module.css'
+import styles from '../styles/CreativeHeader.module.css'
 
 function CreativeHeader({ photo, initials, fullName, jobTitle, summary }) {
   return (

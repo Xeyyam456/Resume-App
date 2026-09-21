@@ -1,0 +1,16 @@
+.sidebar {
+  width: 33%;
+  flex-shrink: 0;
+  background:
+    radial-gradient(ellipse 320px 260px at 50% 0%, rgba(239, 107, 53, 0.16) 0%, transparent 65%),
+    #1a140d;
+  color: #f4e9da;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebarBody {
+  padding: 1.75rem 1.5rem 2rem;
+  flex: 1;
+}

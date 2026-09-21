@@ -1,0 +1,81 @@
+.grid {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.grid2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 640px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkboxField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkboxField input[type='checkbox'] {
+  width: 16px;
+  height: 16px;
+  accent-color: #ef6b35;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.checkboxLabel {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a89678;
+  cursor: pointer;
+}
+
+.endDateLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #a89678;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.inputDisabled {
+  background: #1a140d;
+  color: #6b5d4a;
+  border: 1px solid #322a1f;
+  padding: 0 0.85rem;
+  border-radius: 10px;
+  font-size: 0.875rem;
+  font-family: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  height: 2.375rem;
+}
+
+.endDateInput {
+  border: 1px solid #322a1f;
+  border-radius: 10px;
+  padding: 0.55rem 0.85rem;
+  font-size: 0.875rem;
+  font-family: inherit;
+  color: #f4e9da;
+  background: #1e1812;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  height: 2.375rem;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  color-scheme: dark;
+}
+
+.endDateInput:focus {
+  border-color: rgba(239, 107, 53, 0.55);
+  box-shadow: 0 0 0 3px rgba(239, 107, 53, 0.15);
+}

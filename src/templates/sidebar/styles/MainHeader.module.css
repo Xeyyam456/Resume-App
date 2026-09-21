@@ -1,0 +1,26 @@
+.nameSection {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #f2e4cd;
+  position: relative;
+}
+
+.name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.05;
+  color: #3a2a1f;
+  margin-bottom: 0.55rem;
+}
+
+.jobTitle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 1rem;
+  background: linear-gradient(135deg, #e2622a, #b8860b);
+  color: #fff;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

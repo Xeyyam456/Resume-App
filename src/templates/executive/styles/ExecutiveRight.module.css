@@ -1,0 +1,14 @@
+.right {
+  flex: 1;
+  min-width: 0;
+  padding: 2.4rem 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.emptyHint {
+  color: #999;
+  font-size: 13px;
+  font-style: italic;
+}

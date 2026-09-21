@@ -1,0 +1,34 @@
+.sTag {
+  display: flex;
+  align-items: center;
+  gap: -2px;
+  width: fit-content;
+}
+
+.sTagIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #d9a441;
+  color: #1a1612;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  z-index: 1;
+  box-shadow: 0 0 0 2px #1a1612;
+}
+
+.sTagPill {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #d9a441;
+  background: rgba(217, 164, 65, 0.12);
+  border: 1px solid rgba(217, 164, 65, 0.35);
+  padding: 0.32rem 0.9rem 0.32rem 1.1rem;
+  border-radius: 99px;
+  margin-left: -12px;
+}

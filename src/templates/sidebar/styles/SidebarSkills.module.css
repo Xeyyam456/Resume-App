@@ -1,0 +1,60 @@
+.section {
+  margin-bottom: 1.6rem;
+}
+
+.sectionTitle {
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f9ab7e;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #2f271b;
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.skillName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #f4e9da;
+}
+
+.skillTicks {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.tick {
+  width: 4px;
+  border-radius: 2px;
+  background: #2a2116;
+}
+
+.tick:nth-child(1) { height: 6px; }
+.tick:nth-child(2) { height: 9px; }
+.tick:nth-child(3) { height: 12px; }
+.tick:nth-child(4) { height: 15px; }
+.tick:nth-child(5) { height: 18px; }
+
+.tickFilled {
+  background: linear-gradient(180deg, #e0a72a, #ef6b35);
+  box-shadow: 0 0 5px rgba(239, 107, 53, 0.45);
+}

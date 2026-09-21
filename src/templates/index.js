@@ -1,11 +1,11 @@
-import SidebarTemplate from './sidebar/SidebarTemplate'
-import DiagonalTemplate from './diagonal/DiagonalTemplate'
-import BannerTemplate from './banner/BannerTemplate'
-import CreativeTemplate from './creative/CreativeTemplate'
-import MonochromeTemplate from './monochrome/MonochromeTemplate'
-import ExecutiveTemplate from './executive/ExecutiveTemplate'
-import BoldTemplate from './bold/BoldTemplate'
-import EditorialTemplate from './editorial/EditorialTemplate'
+import SidebarTemplate from './sidebar/components/SidebarTemplate'
+import DiagonalTemplate from './diagonal/components/DiagonalTemplate'
+import BannerTemplate from './banner/components/BannerTemplate'
+import CreativeTemplate from './creative/components/CreativeTemplate'
+import MonochromeTemplate from './monochrome/components/MonochromeTemplate'
+import ExecutiveTemplate from './executive/components/ExecutiveTemplate'
+import BoldTemplate from './bold/components/BoldTemplate'
+import EditorialTemplate from './editorial/components/EditorialTemplate'
 
 export const TEMPLATES = [
   { id: 'sidebar', name: 'Sidebar', description: 'Warm dark sidebar with a clean white body', Component: SidebarTemplate },

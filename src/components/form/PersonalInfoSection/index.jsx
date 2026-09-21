@@ -1,1 +1,1 @@
-export { default } from './PersonalInfoSection'
+export { default } from './components/PersonalInfoSection'

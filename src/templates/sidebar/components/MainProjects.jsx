@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CVMain.module.css'
+import styles from '../styles/MainProjects.module.css'
 
 function MainProjects({ projects }) {
   if (projects.length === 0) return null

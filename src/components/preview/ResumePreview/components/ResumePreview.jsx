@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { getTemplate } from '@/templates'
 import TemplatePicker from '@/components/preview/TemplatePicker'
 import Button from '@/shared/components/Button'
-import styles from './ResumePreview.module.css'
+import styles from '../styles/ResumePreview.module.css'
 
 function ResumePreview({ resumeData, templateId, onTemplateChange }) {
   const handlePrint = () => window.print()

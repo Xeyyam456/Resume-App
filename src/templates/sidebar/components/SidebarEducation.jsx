@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
-import styles from './CVSidebar.module.css'
+import styles from '../styles/SidebarEducation.module.css'
 
 function SidebarEducation({ education }) {
   if (education.length === 0) return null

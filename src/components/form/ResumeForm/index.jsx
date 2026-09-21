@@ -1,1 +1,1 @@
-export { default } from './ResumeForm'
+export { default } from './components/ResumeForm'

@@ -1,1 +1,1 @@
-export { default } from './ResumePreview'
+export { default } from './components/ResumePreview'

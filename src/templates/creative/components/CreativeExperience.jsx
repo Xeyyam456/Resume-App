@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
 import CreativeHeading from './CreativeHeading'
-import styles from './CreativeTemplate.module.css'
+import styles from '../styles/CreativeExperience.module.css'
 
 function CreativeExperience({ experience }) {
   if (experience.length === 0) return null

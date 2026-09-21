@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { SKILL_LEVEL_RANKS } from '@/utils/constants'
-import styles from './CVSidebar.module.css'
+import styles from '../styles/SidebarSkills.module.css'
 
 function SidebarSkills({ skills }) {
   if (skills.length === 0) return null

@@ -1,0 +1,93 @@
+.main {
+  flex: 1;
+  min-width: 0;
+  padding: 2.4rem 2.4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: #fff;
+}
+
+.mBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mHeading {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #131313;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #131313;
+}
+
+.mHeading::before {
+  content: '▶';
+  font-size: 9px;
+  color: #000;
+}
+
+.summary {
+  font-size: 12.5px;
+  color: #444;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.entry {
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid #eee;
+}
+
+.entry:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.entryTitle {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #131313;
+}
+
+.entryDate {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #777;
+  white-space: nowrap;
+}
+
+.entrySub {
+  font-size: 12px;
+  font-weight: 600;
+  font-style: italic;
+  color: #4a4a4a;
+  margin-top: 1px;
+}
+
+.entryDesc {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.65;
+  white-space: pre-line;
+  margin-top: 0.3rem;
+}
+
+.emptyHint {
+  color: #999;
+  font-size: 13px;
+  font-style: italic;
+}

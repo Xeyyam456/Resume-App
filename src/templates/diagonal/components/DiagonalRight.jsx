@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { SKILL_LEVEL_RANKS } from '@/utils/constants'
-import styles from './DiagonalTemplate.module.css'
+import styles from '../styles/DiagonalRight.module.css'
 
 function DiagonalRight({ photo, initials, contactItems, skills, education }) {
   return (

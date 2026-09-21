@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types'
 import { SKILL_LEVEL_RANKS } from '@/utils/constants'
 import CreativeHeading from './CreativeHeading'
-import styles from './CreativeTemplate.module.css'
-
-const RANK_PERCENT = { 1: 55, 2: 68, 3: 80, 4: 90, 5: 98 }
+import { RANK_PERCENT } from '../constants/rankPercent'
+import styles from '../styles/CreativeSkillRings.module.css'
 
 function CreativeSkillRings({ skills }) {
   if (skills.length === 0) return null

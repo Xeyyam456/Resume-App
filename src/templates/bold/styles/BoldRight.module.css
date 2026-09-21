@@ -1,0 +1,133 @@
+.right {
+  flex: 1;
+  min-width: 0;
+  background: #f5c518;
+  padding: 0 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.nameBlock {
+  margin: 0 -2.2rem;
+  padding: 1.9rem 2.2rem 1.6rem;
+  background: #161c2e;
+  border-radius: 0 0 0 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.05;
+}
+
+.nameFirst {
+  color: #f5c518;
+}
+
+.nameLast {
+  color: #fff;
+}
+
+.jobTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c4c8d6;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+  margin-top: 0.2rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0 0.1rem;
+}
+
+.block:first-of-type {
+  margin-top: 0.4rem;
+}
+
+.summary {
+  font-size: 12px;
+  color: #2a2410;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.emptyHint {
+  color: #4a4020;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  border-left: 2px solid #161c2e;
+  padding-left: 1rem;
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -1.32rem;
+  top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #161c2e;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.entryTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #161c2e;
+}
+
+.entryDate {
+  font-size: 10px;
+  font-weight: 600;
+  color: #4a4020;
+  white-space: nowrap;
+}
+
+.entrySub {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #2a2410;
+}
+
+.entryDesc {
+  font-size: 11.5px;
+  color: #2a2410;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin-top: 0.2rem;
+}
+
+.projectItem {
+  padding-bottom: 0.6rem;
+}
+
+.projectItem:last-child {
+  padding-bottom: 0;
+}

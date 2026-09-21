@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CVSidebar.module.css'
+import styles from '../styles/SidebarAvatar.module.css'
 
 function SidebarAvatar({ photo, initials }) {
   return (

@@ -1,1 +1,1 @@
-export { default } from './ExperienceSection'
+export { default } from './components/ExperienceSection'

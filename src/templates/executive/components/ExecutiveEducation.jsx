@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
 import GoldHeading from './GoldHeading'
-import styles from './ExecutiveTemplate.module.css'
+import styles from '../styles/ExecutiveEducation.module.css'
 
 function ExecutiveEducation({ education }) {
   if (education.length === 0) return null

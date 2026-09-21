@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
-import styles from './CVMain.module.css'
+import styles from '../styles/MainExperience.module.css'
 
 function MainExperience({ experience }) {
   if (experience.length === 0) return null

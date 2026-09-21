@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './ExecutiveTemplate.module.css'
+import styles from '../styles/ExecutiveLeft.module.css'
 
 function ExecutiveLeft({ photo, initials, fullName, jobTitle, summary, contactItems }) {
   return (

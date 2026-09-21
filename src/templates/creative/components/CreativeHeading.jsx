@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CreativeTemplate.module.css'
+import styles from '../styles/CreativeHeading.module.css'
 
 function CreativeHeading({ children }) {
   return (

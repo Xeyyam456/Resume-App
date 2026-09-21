@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
 import CreativeHeading from './CreativeHeading'
-import styles from './CreativeTemplate.module.css'
+import styles from '../styles/CreativeEducationProjects.module.css'
 
 function CreativeEducationProjects({ education, projects }) {
   if (education.length === 0 && projects.length === 0) return null

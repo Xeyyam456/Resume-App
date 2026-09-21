@@ -1,0 +1,82 @@
+.header {
+  display: flex;
+  gap: 1.4rem;
+  align-items: flex-start;
+}
+
+.photoBlock {
+  width: 108px;
+  height: 132px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #8b7cf6, #6a5ce0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photoInitials {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #14121f;
+}
+
+.headerRight {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.nameLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.scriptIm {
+  font-family: 'Caveat', cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #a89cf7;
+}
+
+.scriptName {
+  font-family: 'Caveat', cursive;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.jobTitle {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #9490b0;
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.aboutBlock {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.summary {
+  font-size: 11.5px;
+  color: #b0abc9;
+  line-height: 1.65;
+  white-space: pre-wrap;
+}

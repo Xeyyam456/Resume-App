@@ -1,0 +1,82 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.pairGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-left: 2px solid #23213a;
+  padding-left: 1rem;
+}
+
+.timelineItem {
+  position: relative;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -1.32rem;
+  top: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8b7cf6;
+  box-shadow: 0 0 0 3px #14121f;
+}
+
+.timelineDate {
+  font-size: 10px;
+  font-weight: 700;
+  color: #a89cf7;
+  margin-bottom: 0.15rem;
+}
+
+.eduDegree {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #e4e1f0;
+  line-height: 1.3;
+}
+
+.eduSchool {
+  font-size: 10.5px;
+  color: #9490b0;
+  margin-top: 1px;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid #23213a;
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+}
+
+.projectName {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.2rem;
+}
+
+.projectDesc {
+  font-size: 10.5px;
+  color: #9490b0;
+  line-height: 1.55;
+}

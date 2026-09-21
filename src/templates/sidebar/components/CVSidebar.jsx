@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import { useCVSidebarData } from './useCVSidebarData'
+import { useCVSidebarData } from '../hooks/useCVSidebarData'
 import SidebarAvatar from './SidebarAvatar'
 import SidebarContact from './SidebarContact'
 import SidebarSkills from './SidebarSkills'
 import SidebarEducation from './SidebarEducation'
-import styles from './CVSidebar.module.css'
+import styles from '../styles/CVSidebar.module.css'
 
 function CVSidebar({ personal, skills, education }) {
   const { initials, contactItems } = useCVSidebarData(personal)

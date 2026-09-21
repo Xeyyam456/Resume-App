@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CVMain.module.css'
+import styles from '../styles/MainHeader.module.css'
 
 function MainHeader({ fullName, jobTitle }) {
   return (

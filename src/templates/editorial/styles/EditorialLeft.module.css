@@ -1,0 +1,122 @@
+.left {
+  width: 32%;
+  flex-shrink: 0;
+  background: #1a1612;
+  color: #cbc2b4;
+  padding: 2.2rem 1.5rem 2rem;
+  border-radius: 46px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  border: 3px solid #d9a441;
+  background: linear-gradient(135deg, #d9a441, #8a6a24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #1a1612;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.sBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.contactList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 10.5px;
+  color: #b0a795;
+  word-break: break-all;
+}
+
+.contactIcon {
+  color: #d9a441;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.contactLink {
+  color: #b0a795;
+  text-decoration: none;
+}
+
+.contactLink:hover {
+  color: #fff;
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.skillName {
+  font-size: 10.5px;
+  color: #cbc2b4;
+}
+
+.barTrack {
+  height: 5px;
+  background: #2e2820;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 99px;
+  background: #d9a441;
+}
+
+.badgeCircles {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.projectBadge {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(217, 164, 65, 0.12);
+  border: 1px solid rgba(217, 164, 65, 0.4);
+  color: #d9a441;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 800;
+}

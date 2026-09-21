@@ -1,0 +1,391 @@
+/* Shared mini-mockup primitives reused across every template thumbnail
+   (SidebarThumb, DiagonalThumb, BannerThumb, ...). Kept in one file
+   intentionally: it's a shared visual vocabulary, not per-component styling,
+   so splitting it 8 ways would only duplicate the same rules everywhere. */
+.tMainWhite {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 4px;
+}
+
+.tSideDark {
+  width: 38%;
+  flex-shrink: 0;
+  background: #1a140d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding-top: 6px;
+}
+
+.tAvatarC {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ef6b35, #e0a72a);
+  flex-shrink: 0;
+}
+
+.tAvatarCGreen {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7cb83d, #4a7322);
+  flex-shrink: 0;
+}
+
+.tAvatarCSm {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #fff;
+  flex-shrink: 0;
+}
+
+.tAvatarSqDark {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #ef6b35, #e0a72a);
+  flex-shrink: 0;
+}
+
+.tAvatarClip {
+  width: 12px;
+  height: 12px;
+  background: #2a2a2a;
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 70% 100%, 0 100%);
+  flex-shrink: 0;
+}
+
+.tLine {
+  height: 2px;
+  background: #d8cdbc;
+  border-radius: 1px;
+}
+
+.tLineOnDark {
+  height: 2px;
+  background: rgba(236, 227, 212, 0.5);
+  border-radius: 1px;
+}
+
+.tLineOnBanner {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 1px;
+}
+
+.tLineBold {
+  height: 3px;
+  background: #201a12;
+  border-radius: 1px;
+}
+
+.tLineBoldUl {
+  height: 2.5px;
+  background: #131313;
+  border-radius: 1px;
+}
+
+.tLineAccent {
+  height: 2px;
+  background: #e2622a;
+  border-radius: 1px;
+}
+
+.tSquare {
+  width: 3px;
+  height: 3px;
+  background: #7cb83d;
+  flex-shrink: 0;
+}
+
+.tHeadingRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.tArrowRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.tArrow {
+  width: 0;
+  height: 0;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid #000;
+  flex-shrink: 0;
+}
+
+.tDot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #2f8fe0;
+  flex-shrink: 0;
+}
+
+/* ─── Diagonal (green) ─── */
+.tDiagDark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46%;
+  background: #1a1d17;
+  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding-top: 8px;
+  padding-left: 6px;
+}
+
+/* ─── Banner (blue) ─── */
+.tBannerStrip {
+  height: 26%;
+  flex-shrink: 0;
+  background: linear-gradient(120deg, #2f8fe0, #0f3d63);
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 0 4px;
+}
+
+.tBannerLines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.tBannerBody {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.tBannerLeft {
+  width: 34%;
+  flex-shrink: 0;
+  background: #0d1b2a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 4px;
+}
+
+.tSlider {
+  height: 2px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #2f8fe0 45%, #1c2f42 45%);
+}
+
+.tBannerRight {
+  flex: 1;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 4px;
+  min-width: 0;
+}
+
+.tTimelineRow {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+/* ─── Creative (violet) ─── */
+.tCreativeCanvas {
+  width: 100%;
+  height: 100%;
+  background: #14121f;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 6px;
+  box-sizing: border-box;
+}
+
+.tCreativeHeader {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.tAvatarSqViolet {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: linear-gradient(135deg, #8b7cf6, #6a5ce0);
+  flex-shrink: 0;
+}
+
+.tScript {
+  width: 20px;
+  height: 6px;
+  border-bottom: 2px dashed #a89cf7;
+  transform: skewX(-12deg);
+}
+
+.tRingsRow {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.tRing {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid #8b7cf6;
+  border-right-color: #23213a;
+  border-bottom-color: #23213a;
+}
+
+/* ─── Monochrome (black & white) ─── */
+.tMonoDark {
+  width: 32%;
+  flex-shrink: 0;
+  background: #181818;
+  border-top: 2px solid #000;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 6px 3px;
+}
+
+/* ─── Executive (gold & teal) ─── */
+.tExecLeft {
+  width: 36%;
+  flex-shrink: 0;
+  background: #0d0d0d;
+  border-radius: 0 14px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px 0;
+}
+
+.tGoldBar {
+  height: 6px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #f0c96b, #d4a017);
+}
+
+/* ─── Bold (navy & yellow) ─── */
+.tBoldLeft {
+  width: 36%;
+  flex-shrink: 0;
+  background: #161c2e;
+  border-radius: 0 10px 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 4px 0;
+}
+
+.tBoldRight {
+  flex: 1;
+  min-width: 0;
+  background: #f5c518;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 5px;
+}
+
+.tLineDarkBold {
+  height: 4px;
+  border-radius: 1px;
+  background: #161c2e;
+}
+
+.tLineDark {
+  height: 2px;
+  border-radius: 1px;
+  background: #4a4020;
+}
+
+.tDarkPill {
+  height: 6px;
+  border-radius: 99px;
+  background: #161c2e;
+}
+
+/* ─── Editorial (mustard & charcoal) ─── */
+.tEditRoot {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: #221d18;
+}
+
+.tEditLeft {
+  width: 32%;
+  flex-shrink: 0;
+  background: #1a1612;
+  border-radius: 10px 0 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 3px 0;
+}
+
+.tPillGold {
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(217, 164, 65, 0.5);
+}
+
+.tEditRight {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 5px;
+}
+
+.tScriptSerif {
+  width: 60%;
+  height: 7px;
+  border-radius: 1px;
+  background: #fff;
+}
+
+.tEditCard {
+  flex: 1;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 4px 5px;
+}

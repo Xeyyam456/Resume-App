@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { formatDate } from '@/utils/formatDate'
-import styles from './MonochromeTemplate.module.css'
+import styles from '../styles/MonochromeMain.module.css'
 
 function MonochromeMain({ summary, experience, projects }) {
   const isEmpty = !summary && experience.length === 0 && projects.length === 0

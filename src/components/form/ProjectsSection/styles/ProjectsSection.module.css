@@ -1,18 +1,3 @@
-.grid {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.grid2 {
-  grid-template-columns: 1fr 1fr;
-}
-
-@media (max-width: 640px) {
-  .grid2 {
-    grid-template-columns: 1fr;
-  }
-}
-
 .entries {
   margin-bottom: 0.75rem;
 }

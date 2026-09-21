@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import styles from './CVSidebar.module.css'
+import styles from '../styles/SidebarContact.module.css'
 
 function SidebarContact({ items }) {
   if (items.length === 0) return null

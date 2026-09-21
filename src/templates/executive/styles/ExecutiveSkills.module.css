@@ -1,0 +1,36 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.skillList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skillRow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.skillName {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #333;
+}
+
+.barTrack {
+  height: 6px;
+  background: #eee;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #1b8f96, #d4a017);
+}

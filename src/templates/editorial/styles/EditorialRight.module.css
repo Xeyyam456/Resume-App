@@ -1,0 +1,126 @@
+.right {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 2.2rem 2rem 2rem;
+}
+
+.nameZone {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.1;
+}
+
+.jobTitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #d9a441;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  padding: 1.8rem 1.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.heading {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #1a1612;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #d9a441;
+  width: fit-content;
+}
+
+.summary {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.emptyHint {
+  color: #999;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.entry {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d9a441;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.entryBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.entryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.entryTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1612;
+}
+
+.entryDate {
+  font-size: 10px;
+  color: #999;
+  white-space: nowrap;
+}
+
+.entrySub {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #a5791f;
+}
+
+.entryDesc {
+  font-size: 11.5px;
+  color: #555;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin-top: 0.2rem;
+}

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { SKILL_LEVEL_RANKS } from '@/utils/constants'
-import styles from './BannerTemplate.module.css'
+import styles from '../styles/BannerSkillsPanel.module.css'
 
 function BannerSkillsPanel({ summary, skills }) {
   return (
