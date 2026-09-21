@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import EntryCard from '@/components/ui/EntryCard'
-import FormInput from '@/components/ui/FormInput'
-import FormSelect from '@/components/ui/FormSelect'
-import SectionCard from '@/components/ui/SectionCard'
-import Button from '@/components/ui/Button'
+import EntryCard from '@/shared/components/EntryCard'
+import FormInput from '@/shared/components/FormInput'
+import FormSelect from '@/shared/components/FormSelect'
+import SectionCard from '@/shared/components/SectionCard'
+import Button from '@/shared/components/Button'
 import styles from './EducationSection.module.css'
 
 const DEGREE_OPTIONS = [

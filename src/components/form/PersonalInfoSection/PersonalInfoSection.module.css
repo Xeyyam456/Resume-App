@@ -5,8 +5,8 @@
   gap: 1.25rem;
   margin-bottom: 1.25rem;
   padding: 0.9rem 1rem;
-  background: rgba(56, 189, 248, 0.03);
-  border: 1px dashed rgba(56, 189, 248, 0.2);
+  background: rgba(239, 107, 53, 0.06);
+  border: 1px dashed rgba(239, 107, 53, 0.3);
   border-radius: 12px;
 }
 
@@ -14,8 +14,8 @@
   width: 68px;
   height: 68px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(56,189,248,0.25), rgba(14,165,233,0.25));
-  border: 2px solid rgba(56, 189, 248, 0.3);
+  background: linear-gradient(135deg, rgba(239,107,53,0.28), rgba(224,167,42,0.28));
+  border: 2px solid rgba(239, 107, 53, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,7 +33,7 @@
 .avatarInitials {
   font-size: 1.4rem;
   font-weight: 800;
-  color: #38bdf8;
+  color: #f6935f;
   letter-spacing: 1px;
 }
 
@@ -49,9 +49,9 @@
   gap: 0.35rem;
   font-size: 0.78rem;
   font-weight: 600;
-  color: #38bdf8;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.25);
+  color: #f6935f;
+  background: rgba(239, 107, 53, 0.12);
+  border: 1px solid rgba(239, 107, 53, 0.3);
   border-radius: 8px;
   padding: 0.3rem 0.8rem;
   cursor: pointer;
@@ -61,8 +61,8 @@
 }
 
 .uploadBtn:hover {
-  background: rgba(56, 189, 248, 0.18);
-  border-color: rgba(56, 189, 248, 0.5);
+  background: rgba(239, 107, 53, 0.2);
+  border-color: rgba(239, 107, 53, 0.55);
 }
 
 .photoInput {
@@ -71,13 +71,13 @@
 
 .photoHint {
   font-size: 0.68rem;
-  color: #334155;
+  color: #a89678;
   margin: 0;
 }
 
 .removeBtn {
   font-size: 0.72rem;
-  color: #f87171;
+  color: #e5484d;
   background: none;
   border: none;
   cursor: pointer;

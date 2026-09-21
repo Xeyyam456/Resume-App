@@ -1,18 +1,11 @@
 import PropTypes from 'prop-types'
-import EntryCard from '@/components/ui/EntryCard'
-import FormInput from '@/components/ui/FormInput'
-import FormSelect from '@/components/ui/FormSelect'
-import SectionCard from '@/components/ui/SectionCard'
-import Button from '@/components/ui/Button'
+import EntryCard from '@/shared/components/EntryCard'
+import FormInput from '@/shared/components/FormInput'
+import FormSelect from '@/shared/components/FormSelect'
+import SectionCard from '@/shared/components/SectionCard'
+import Button from '@/shared/components/Button'
+import { SKILL_LEVEL_OPTIONS } from '@/utils/constants'
 import styles from './SkillsSection.module.css'
-
-const LEVEL_OPTIONS = [
-  { value: 'Beginner', label: '🔵 Beginner' },
-  { value: 'Elementary', label: '🟢 Elementary' },
-  { value: 'Intermediate', label: '🟡 Intermediate' },
-  { value: 'Advanced', label: '🟠 Advanced' },
-  { value: 'Expert', label: '🔴 Expert' },
-]
 
 function SkillsSection({ skills, onAdd, onUpdate, onRemove }) {
   return (
@@ -38,7 +31,7 @@ function SkillsSection({ skills, onAdd, onUpdate, onRemove }) {
                 id={`skill-level-${skill.id}`}
                 value={skill.level}
                 onChange={val => onUpdate(skill.id, 'level', val)}
-                options={LEVEL_OPTIONS}
+                options={SKILL_LEVEL_OPTIONS}
               />
             </div>
           </EntryCard>

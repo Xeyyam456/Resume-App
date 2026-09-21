@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import FormTextarea from '@/components/ui/FormTextarea'
-import SectionCard from '@/components/ui/SectionCard'
+import FormTextarea from '@/shared/components/FormTextarea'
+import SectionCard from '@/shared/components/SectionCard'
 
 function SummarySection({ summary, onUpdate }) {
   return (

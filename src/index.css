@@ -12,19 +12,25 @@
 }
 
 :root {
-  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  color: #1e293b;
-  background-color: #0f1623;
+  color: #a89678;
+  background-color: #14100b;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --accent: #6366f1;
-  --accent2: #06b6d4;
-  --accent-glow: rgba(99, 102, 241, 0.25);
-  --surface: rgba(255, 255, 255, 0.04);
-  --border: rgba(255, 255, 255, 0.08);
+  --accent: #ef6b35;
+  --accent-light: #f6935f;
+  --accent2: #e0a72a;
+  --accent3: #ff5a4a;
+  --accent-rgb: 239, 107, 53;
+  --accent2-rgb: 224, 167, 42;
+  --accent-glow: rgba(239, 107, 53, 0.22);
+  --surface: #1e1812;
+  --border: #322a1f;
+  --text: #f4e9da;
+  --danger: #e5484d;
 }
 
 body {

@@ -6,7 +6,7 @@
   font-family: inherit;
   font-weight: 600;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
@@ -42,15 +42,15 @@
 
 /* ─── Variants ─── */
 
-/* primary — gradient indigo→cyan */
+/* primary — gradient rust→gold */
 .primary {
-  background: linear-gradient(135deg, #6366f1, #06b6d4);
-  color: #fff;
-  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #ef6b35, #e0a72a);
+  color: #1a140d;
+  box-shadow: 0 2px 16px rgba(239, 107, 53, 0.4);
 }
 
 .primary:hover:not(:disabled) {
-  box-shadow: 0 4px 20px rgba(99, 102, 241, 0.6);
+  box-shadow: 0 4px 22px rgba(239, 107, 53, 0.55);
   transform: translateY(-1px);
 }
 
@@ -60,45 +60,45 @@
 
 /* dashed — add entry */
 .dashed {
-  background: rgba(99, 102, 241, 0.05);
-  color: #818cf8;
-  border: 1.5px dashed rgba(99, 102, 241, 0.4);
-  border-radius: 10px;
+  background: rgba(239, 107, 53, 0.06);
+  color: #f6935f;
+  border: 1.5px dashed rgba(239, 107, 53, 0.4);
+  border-radius: 12px;
 }
 
 .dashed:hover:not(:disabled) {
-  background: rgba(99, 102, 241, 0.12);
-  border-color: #6366f1;
-  color: #a5b4fc;
+  background: rgba(239, 107, 53, 0.14);
+  border-color: #ef6b35;
+  color: #f9ab7e;
 }
 
 /* ghost — tabs */
 .ghost {
   background: transparent;
-  color: #64748b;
+  color: #a89678;
   border-radius: 8px;
   padding: 0.35rem 0.9rem;
 }
 
 .ghost:hover:not(:disabled) {
-  background: rgba(255, 255, 255, 0.07);
-  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f4e9da;
 }
 
 .ghostActive {
-  background: rgba(99, 102, 241, 0.2) !important;
-  color: #a5b4fc !important;
-  box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.35) !important;
+  background: rgba(239, 107, 53, 0.18) !important;
+  color: #f9ab7e !important;
+  box-shadow: 0 0 0 1px rgba(239, 107, 53, 0.35) !important;
 }
 
 /* danger — remove */
 .danger {
   background: none;
-  color: #475569;
+  color: #6b5d4a;
   border-radius: 6px;
 }
 
 .danger:hover:not(:disabled) {
-  background: rgba(239, 68, 68, 0.1);
-  color: #f87171;
+  background: rgba(229, 72, 77, 0.14);
+  color: #e5484d;
 }

@@ -27,7 +27,7 @@
 .checkboxField input[type='checkbox'] {
   width: 16px;
   height: 16px;
-  accent-color: #6366f1;
+  accent-color: #ef6b35;
   cursor: pointer;
   flex-shrink: 0;
 }
@@ -35,25 +35,25 @@
 .checkboxLabel {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #94a3b8;
+  color: #a89678;
   cursor: pointer;
 }
 
 .endDateLabel {
   font-size: 0.72rem;
   font-weight: 600;
-  color: #64748b;
+  color: #a89678;
   letter-spacing: 0.6px;
   text-transform: uppercase;
   margin-bottom: 0.35rem;
 }
 
 .inputDisabled {
-  background: rgba(255, 255, 255, 0.04);
-  color: #334155;
-  border: 1px solid rgba(99, 102, 241, 0.2);
+  background: #1a140d;
+  color: #6b5d4a;
+  border: 1px solid #322a1f;
   padding: 0 0.85rem;
-  border-radius: 9px;
+  border-radius: 10px;
   font-size: 0.875rem;
   font-family: inherit;
   width: 100%;
@@ -64,13 +64,13 @@
 }
 
 .endDateInput {
-  border: 1px solid rgba(99, 102, 241, 0.2);
-  border-radius: 9px;
+  border: 1px solid #322a1f;
+  border-radius: 10px;
   padding: 0.55rem 0.85rem;
   font-size: 0.875rem;
   font-family: inherit;
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.04);
+  color: #f4e9da;
+  background: #1e1812;
   outline: none;
   width: 100%;
   box-sizing: border-box;
@@ -80,6 +80,6 @@
 }
 
 .endDateInput:focus {
-  border-color: rgba(99, 102, 241, 0.6);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+  border-color: rgba(239, 107, 53, 0.55);
+  box-shadow: 0 0 0 3px rgba(239, 107, 53, 0.15);
 }

@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
-import EntryCard from '@/components/ui/EntryCard'
-import FormInput from '@/components/ui/FormInput'
-import FormTextarea from '@/components/ui/FormTextarea'
-import SectionCard from '@/components/ui/SectionCard'
-import Button from '@/components/ui/Button'
+import EntryCard from '@/shared/components/EntryCard'
+import FormInput from '@/shared/components/FormInput'
+import FormTextarea from '@/shared/components/FormTextarea'
+import SectionCard from '@/shared/components/SectionCard'
+import Button from '@/shared/components/Button'
 import styles from './ExperienceSection.module.css'
 
 function ExperienceSection({ experiences, onAdd, onUpdate, onRemove }) {

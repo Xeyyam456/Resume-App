@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types'
-import FormInput from '@/components/ui/FormInput'
-import SectionCard from '@/components/ui/SectionCard'
+import FormInput from '@/shared/components/FormInput'
+import SectionCard from '@/shared/components/SectionCard'
+import { getInitials } from '@/utils/initials'
 import styles from './PersonalInfoSection.module.css'
 
 function PersonalInfoSection({ personal, onUpdate }) {
@@ -12,8 +13,7 @@ function PersonalInfoSection({ personal, onUpdate }) {
     reader.readAsDataURL(file)
   }
 
-  const initials =
-    `${personal.firstName?.[0] ?? ''}${personal.lastName?.[0] ?? ''}`.toUpperCase() || '?'
+  const initials = getInitials(personal.firstName, personal.lastName)
 
   return (
     <SectionCard icon="👤" title="Personal Information">

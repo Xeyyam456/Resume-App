@@ -4,7 +4,10 @@
   flex-direction: column;
   height: 100vh;
   overflow: hidden;
-  background: #0f1623;
+  background:
+    radial-gradient(ellipse 900px 500px at 12% -10%, rgba(239, 107, 53, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 700px 500px at 105% 10%, rgba(224, 167, 42, 0.08) 0%, transparent 55%),
+    #14100b;
 }
 
 /* ─── Header ─── */
@@ -14,16 +17,16 @@
   justify-content: space-between;
   padding: 0 1.75rem;
   height: 58px;
-  background: rgba(15, 22, 35, 0.85);
+  background: rgba(20, 16, 11, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(99, 102, 241, 0.18);
+  border-bottom: 1px solid #322a1f;
   flex-shrink: 0;
   z-index: 10;
   position: relative;
 }
 
-/* subtle gradient line at very top */
+/* warm gradient line at very top */
 .app-header::before {
   content: '';
   position: absolute;
@@ -31,14 +34,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, #6366f1, #06b6d4, #6366f1);
-  background-size: 200% 100%;
-  animation: shimmer 3s linear infinite;
-}
-
-@keyframes shimmer {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+  background: linear-gradient(90deg, #ef6b35, #e0a72a, #ef6b35);
 }
 
 .app-header__logo {
@@ -49,14 +45,14 @@
 
 .app-header__icon {
   font-size: 1.3rem;
-  filter: drop-shadow(0 0 6px rgba(99,102,241,0.6));
+  filter: drop-shadow(0 0 6px rgba(239, 107, 53, 0.5));
 }
 
 .app-header__title {
   font-size: 1.05rem;
   font-weight: 800;
   letter-spacing: 0.3px;
-  background: linear-gradient(135deg, #e2e8f0, #a5b4fc);
+  background: linear-gradient(135deg, #f4e9da, #f6935f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -72,7 +68,7 @@
 .app-panel {
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: rgba(99,102,241,0.3) transparent;
+  scrollbar-color: rgba(239, 107, 53, 0.3) transparent;
 }
 
 .app-panel::-webkit-scrollbar {
@@ -84,7 +80,7 @@
 }
 
 .app-panel::-webkit-scrollbar-thumb {
-  background: rgba(99,102,241,0.35);
+  background: rgba(239, 107, 53, 0.35);
   border-radius: 99px;
 }
 
@@ -93,13 +89,13 @@
   .app-panel--form {
     flex: 0 0 44%;
     max-width: 44%;
-    background: #131c2e;
-    border-right: 1px solid rgba(99,102,241,0.12);
+    background: #1a140d;
+    border-right: 1px solid #322a1f;
   }
 
   .app-panel--preview {
     flex: 1;
-    background: #0d1520;
+    background: #110d09;
   }
 
   .app-header__tabs {
@@ -120,11 +116,11 @@
   }
 
   .app-panel--form {
-    background: #131c2e;
+    background: #1a140d;
   }
 
   .app-panel--preview {
-    background: #0d1520;
+    background: #110d09;
   }
 
   .app-panel--active {

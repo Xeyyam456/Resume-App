@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import Button from '@/components/ui/Button'
+import Button from '@/shared/components/Button'
 import styles from './EntryCard.module.css'
 
 function EntryCard({ title, onRemove, children, defaultOpen }) {
